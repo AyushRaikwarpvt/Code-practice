@@ -9,7 +9,8 @@ public class Questions {
         }
     }
 
-    public  void Printingw (int End){
+    //    Print even numbers between 1 and 20 using a while loop.
+    public  void PrintingW (int End){
        int i = 0 ;
        while (i <= End){
            System.out.println(i);
@@ -17,16 +18,27 @@ public class Questions {
        }
     }
 
-//    Print even numbers between 1 and 20 using a while loop.
+//    Print the first 5 natural numbers using a do-while loop.
+    public void PrintingDow(int End){
+       int i = 0 ;
+       do{
+           System.out.println(i);
+           i++;
+       }
+       while (i <=End);
+    }
+
 
 
 
     public static void main(String[] args) {
 
        Questions obj = new Questions();
-       obj.Printingw(30);
+       obj.PrintingW(30);
         System.out.println("--------------");
        obj.Printing(20);
+        System.out.println("--------------");
+        obj.PrintingDow(40);
 
     }
 
