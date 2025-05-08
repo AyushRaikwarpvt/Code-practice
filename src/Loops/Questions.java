@@ -62,16 +62,84 @@ public class Questions {
         }
     }
 //    Find the factorial of a given number (e.g., 5 → 120).
-    void FatorialFun(int Fun){
-       int count = Fun;
-       int res = Fun;
-       int temp = 0 ;
-        for (int i = Fun; i >= 1; i--) {
-            temp = res * i-1;
+    void FatorialFun(int Fun) {
+            int res = 1;
+        for (int i = 1; i <= Fun; i++) {
+            res *= i;
         }
-        System.out.println("That's Fatorial of your Given Number " + temp);
+        System.out.println(res);
     }
+//    Use a loop to count digits in a number (e.g., 12345 → 5 digits).
 
+    void CountFunc(int Range){
+
+       int temp = 0 ;
+       int res = 0;
+       int copy = Range;
+
+       while (copy!=1){
+           res = copy / 10 ;
+           copy = res;
+           temp++;
+       }
+        System.out.println(temp + 1);
+    }
+//    Print the square of numbers from 1 to 10.
+
+    void SqaureFunc(int start , int End){
+        for (int i = start; i <= End ; i++) {
+            System.out.println( "bhai " + i +"ka Sqaure he => " +  i * i);
+        }
+    }
+//    Print a square pattern of * of size 5×5.
+    void Pattern1 (int one , int Two){
+
+        for (int i = 1; i <= Two; i++) {
+
+            for (int j = 0; j < Two; j++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+    }
+//    Print a right-angled triangle pattern of numbers (1 per line).
+
+    void FunRightTrangle(int nol){
+        for (int i = 1; i <= nol; i++) {
+
+            for (int j = 1; j <= nol ; j++) {
+                if ( j >= 6 - i){
+                    System.out.print("*");
+                }
+                else {
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+
+        }
+    }
+//    Print the sum of even digits in a given number.
+    void SumEvenNum(int Range){
+
+       int Sum = 0;
+        for (int i = 1; i <= Range ; i++) {
+            if (i%2==0){
+                Sum += i;
+            }
+        }
+        System.out.println("The Even Number Total is " + Sum);
+    }
+//    Find the largest number in an array using a loop
+    void FindLargest(int Arr[]){
+        int temp = Arr[0];
+        for (int i =  1; i <  Arr.length  ; i++) {
+            if (Arr[i] > temp) {
+                temp = Arr[i];
+            }
+        }
+        System.out.println(temp);
+    }
 
     public static void main(String[] args) {
 
@@ -91,6 +159,21 @@ public class Questions {
         obj.Printodd(10);
         System.out.println("--------------");
         obj.FatorialFun(5);
+        System.out.println("--------------");
+        obj.CountFunc(18);
+        System.out.println("--------------");
+        obj.SqaureFunc(1,10);
+        System.out.println("--------------");
+        obj.Pattern1(5,5);
+        System.out.println("--------------");
+        obj.FunRightTrangle(5);
+        System.out.println("--------------");
+        obj.SumEvenNum(10);
+        System.out.println("--------------");
+        int Arr[] = {10,30,20,90,40,25};
+        obj.FindLargest(Arr);
+
+
     }
 
 }
