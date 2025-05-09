@@ -7,6 +7,12 @@ class VotingRight extends RuntimeException {
     }
 }
 
+class A{
+    void ZeroDivide(int B) throws ArithmeticException{
+      int a = 12 / 0;
+    }
+}
+
 public class Voting {
 
     public static void main(String[] args) {
@@ -21,5 +27,16 @@ public class Voting {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        finally {
+            System.out.println("Thankyou For Intresting in Voting");
+        }
+
+        A obj = new A();
+        try{
+            obj.ZeroDivide(10);
+        } catch (ArithmeticException e) {
+            System.out.println("bhai tu zero se divide kyu lr rh h ");;
+        }
+
     }
 }
