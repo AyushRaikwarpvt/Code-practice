@@ -2,178 +2,271 @@ package Loops;
 
 public class Questions {
 
-    // Print numbers from 1 to 10 using a for loop.
-   public void Printing (int End){
-        for (int i = 0; i <= End ; i++) {
+    // Print numbers from 1 to End using a for loop.
+    public void printNumbers(int end) {
+        for (int i = 1; i <= end; i++) {
             System.out.println(i);
         }
     }
 
-    //    Print even numbers between 1 and 20 using a while loop.
-    public  void PrintingW (int End){
-       int i = 0 ;
-       while (i <= End){
-           System.out.println(i);
-           i++;
-       }
-    }
-
-//    Print the first 5 natural numbers using a do-while loop.
-    public void PrintingDow(int End){
-       int i = 0 ;
-       do{
-           System.out.println(i);
-           i++;
-       }
-       while (i <=End);
-    }
-
-
-//    Calculate the sum of numbers from 1 to 100 using a loop.
-    void SumFunc(int Start  , int End){
-       int count = 0;
-        for (int i = Start; i <= End; i++) {
-            count = count + i;
-        }
-        System.out.println("The of Sum Your Given Values " + count);
-    }
-
-//    Print the multiplication table of Any number using a for loop.
-
-    void Tablefun(int Tabele){
-
-        for (int i = 1; i <= 10; i++){
-            System.out.println( Tabele  +" * "+ i + "= " + Tabele*i);
-        }
-    }
-    //Print all numbers from 10 to 1 in reverse using a loop.
-    void ReverseFun(int End){
-        for (int i = End; i >= 0; i--) {
-            System.out.println("Printing Reverse Gave you Number " +  i );
+    // Print even numbers up to End using a while loop.
+    public void printEvenWhile(int end) {
+        int i = 2;
+        while (i <= end) {
+            System.out.println(i);
+            i += 2;
         }
     }
 
-//    Print only odd numbers from 1 to 20.
-    void Printodd(int Range){
-        for (int i = 0; i <= Range; i++){
-            if (i%2!=0){
-                System.out.println("Odd Number in our Range " + i);
-            }
+    // Print the first N natural numbers using a do-while loop.
+    public void printNaturalDoWhile(int end) {
+        int i = 1;
+        do {
+            System.out.println(i);
+            i++;
+        } while (i <= end);
+    }
+
+    // Calculate the sum from Start to End.
+    public void sumRange(int start, int end) {
+        int sum = 0;
+        for (int i = start; i <= end; i++) {
+            sum += i;
+        }
+        System.out.println("Sum: " + sum);
+    }
+
+    // Print multiplication table of a number.
+    public void printTable(int number) {
+        for (int i = 1; i <= 10; i++) {
+            System.out.println(number + " * " + i + " = " + (number * i));
         }
     }
-//    Find the factorial of a given number (e.g., 5 → 120).
-    void FatorialFun(int Fun) {
-            int res = 1;
-        for (int i = 1; i <= Fun; i++) {
-            res *= i;
-        }
-        System.out.println(res);
-    }
-//    Use a loop to count digits in a number (e.g., 12345 → 5 digits).
 
-    void CountFunc(int Range){
-
-       int temp = 0 ;
-       int res = 0;
-       int copy = Range;
-
-       while (copy!=1){
-           res = copy / 10 ;
-           copy = res;
-           temp++;
-       }
-        System.out.println(temp + 1);
-    }
-//    Print the square of numbers from 1 to 10.
-
-    void SqaureFunc(int start , int End){
-        for (int i = start; i <= End ; i++) {
-            System.out.println( "bhai " + i +"ka Sqaure he => " +  i * i);
+    // Print numbers in reverse from End to 1.
+    public void printReverse(int end) {
+        for (int i = end; i >= 1; i--) {
+            System.out.println(i);
         }
     }
-//    Print a square pattern of * of size 5×5.
-    void Pattern1 (int one , int Two){
 
-        for (int i = 1; i <= Two; i++) {
+    // Print only odd numbers up to Range.
+    public void printOdds(int range) {
+        for (int i = 1; i <= range; i += 2) {
+            System.out.println(i);
+        }
+    }
 
-            for (int j = 0; j < Two; j++) {
+    // Find factorial of a number.
+    public void factorial(int number) {
+        int result = 1;
+        for (int i = 2; i <= number; i++) {
+            result *= i;
+        }
+        System.out.println("Factorial: " + result);
+    }
+
+    // Count number of digits in a number.
+    public void countDigits(int number) {
+        int count = 0;
+        int copy = number;
+        while (copy != 0) {
+            copy /= 10;
+            count++;
+        }
+        System.out.println("Number of digits: " + count);
+    }
+
+    // Print square of numbers in a range.
+    public void printSquares(int start, int end) {
+        for (int i = start; i <= end; i++) {
+            System.out.println(i + " squared = " + (i * i));
+        }
+    }
+
+    // Print a square pattern of *.
+    public void printSquarePattern(int size) {
+        for (int i = 1; i <= size; i++) {
+            for (int j = 1; j <= size; j++) {
                 System.out.print("* ");
             }
             System.out.println();
         }
     }
-//    Print a right-angled triangle pattern of numbers (1 per line).
 
-    void FunRightTrangle(int nol){
-        for (int i = 1; i <= nol; i++) {
-
-            for (int j = 1; j <= nol ; j++) {
-                if ( j >= 6 - i){
+    // Print a right-angled triangle pattern.
+    public void printRightTriangle(int rows) {
+        for (int i = 1; i <= rows; i++) {
+            for (int j = 1; j <= rows; j++) {
+                if (j >= rows - i + 1) {
                     System.out.print("*");
-                }
-                else {
+                } else {
                     System.out.print(" ");
                 }
             }
             System.out.println();
-
         }
     }
-//    Print the sum of even digits in a given number.
-    void SumEvenNum(int Range){
 
-       int Sum = 0;
-        for (int i = 1; i <= Range ; i++) {
-            if (i%2==0){
-                Sum += i;
+    // Sum of even numbers in a given range.
+    public void sumEvenNumbers(int range) {
+        int sum = 0;
+        for (int i = 2; i <= range; i += 2) {
+            sum += i;
+        }
+        System.out.println("Sum of even numbers: " + sum);
+    }
+
+    // Find the largest number in an array.
+    public void findLargest(int[] arr) {
+        int largest = arr[0];
+        for (int num : arr) {
+            if (num > largest) {
+                largest = num;
             }
         }
-        System.out.println("The Even Number Total is " + Sum);
-    }
-//    Find the largest number in an array using a loop
-    void FindLargest(int Arr[]){
-        int temp = Arr[0];
-        for (int i =  1; i <  Arr.length  ; i++) {
-            if (Arr[i] > temp) {
-                temp = Arr[i];
-            }
-        }
-        System.out.println(temp);
+        System.out.println("Largest number: " + largest);
     }
 
+    // Print Fibonacci series up to N terms.
+    public void fibonacci(int terms) {
+        int a = 0, b = 1;
+        System.out.print("Fibonacci series: " + a + " " + b);
+        for (int i = 3; i <= terms; i++) {
+            int c = a + b;
+            System.out.print(" " + c);
+            a = b;
+            b = c;
+        }
+        System.out.println();
+    }
+
+    // Reverse a given number.
+    public void reverseNumber(int number) {
+        int original = number;
+        int reversed = 0;
+        while (number != 0) {
+            int rem = number % 10;
+            reversed = reversed * 10 + rem;
+            number /= 10;
+        }
+        System.out.println("Reversed number: " + reversed);
+    }
+
+    // Print a pyramid pattern of *.
+    public void printPyramid(int rows) {
+        for (int i = 1; i <= rows; i++) {
+            for (int j = 1; j <= 2 * rows - 1; j++) {
+                if (j >= rows - (i - 1) && j <= rows + (i - 1)) {
+                    System.out.print("*");
+                } else {
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        }
+    }
+
+    // Print full multiplication table from 1 to 10.
+    public void fullMultiplicationTable() {
+        for (int i = 1; i <= 10; i++) {
+            for (int j = 1; j <= 10; j++) {
+                System.out.println(i + " * " + j + " = " + (i * j));
+            }
+            System.out.println("----------");
+        }
+    }
+
+    // Check whether a number is palindrome.
+    public void checkPalindrome(int number) {
+        int original = number, reversed = 0;
+        while (number != 0) {
+            int rem = number % 10;
+            reversed = reversed * 10 + rem;
+            number /= 10;
+        }
+        if (original == reversed) {
+            System.out.println(original + " is a palindrome.");
+        } else {
+            System.out.println(original + " is not a palindrome.");
+        }
+    }
+
+    // Count occurrences of a digit in a number.
+    public void countDigitOccurrences(int number, int digitToCount) {
+        int count = 0;
+        while (number != 0) {
+            int digit = number % 10;
+            if (digit == digitToCount) {
+                count++;
+            }
+            number /= 10;
+        }
+        System.out.println("Digit " + digitToCount + " occurs " + count + " times.");
+    }
+
+    // Main method to run all functions
     public static void main(String[] args) {
+        Questions q = new Questions();
 
-       Questions obj = new Questions();
-       obj.PrintingW(30);
+        q.printEvenWhile(30);
         System.out.println("--------------");
-       obj.Printing(20);
-        System.out.println("--------------");
-        obj.PrintingDow(40);
-        System.out.println("--------------");
-        obj.SumFunc(1,10);
-        System.out.println("--------------");
-        obj.Tablefun(10);
-        System.out.println("--------------");
-        obj.ReverseFun(10);
-        System.out.println("--------------");
-        obj.Printodd(10);
-        System.out.println("--------------");
-        obj.FatorialFun(5);
-        System.out.println("--------------");
-        obj.CountFunc(18);
-        System.out.println("--------------");
-        obj.SqaureFunc(1,10);
-        System.out.println("--------------");
-        obj.Pattern1(5,5);
-        System.out.println("--------------");
-        obj.FunRightTrangle(5);
-        System.out.println("--------------");
-        obj.SumEvenNum(10);
-        System.out.println("--------------");
-        int Arr[] = {10,30,20,90,40,25};
-        obj.FindLargest(Arr);
 
+        q.printNumbers(20);
+        System.out.println("--------------");
 
+        q.printNaturalDoWhile(10);
+        System.out.println("--------------");
+
+        q.sumRange(1, 10);
+        System.out.println("--------------");
+
+        q.printTable(10);
+        System.out.println("--------------");
+
+        q.printReverse(10);
+        System.out.println("--------------");
+
+        q.printOdds(20);
+        System.out.println("--------------");
+
+        q.factorial(5);
+        System.out.println("--------------");
+
+        q.countDigits(12345);
+        System.out.println("--------------");
+
+        q.printSquares(1, 10);
+        System.out.println("--------------");
+
+        q.printSquarePattern(5);
+        System.out.println("--------------");
+
+        q.printRightTriangle(5);
+        System.out.println("--------------");
+
+        q.sumEvenNumbers(20);
+        System.out.println("--------------");
+
+        int[] arr = {3, 8, 1, 9, 4};
+        q.findLargest(arr);
+        System.out.println("--------------");
+
+        q.fibonacci(10);
+        System.out.println("--------------");
+
+        q.reverseNumber(12345);
+        System.out.println("--------------");
+
+        q.printPyramid(5);
+        System.out.println("--------------");
+
+        q.fullMultiplicationTable();
+        System.out.println("--------------");
+
+        q.checkPalindrome(121);
+        System.out.println("--------------");
+
+        q.countDigitOccurrences(12333345, 3);
     }
-
 }
