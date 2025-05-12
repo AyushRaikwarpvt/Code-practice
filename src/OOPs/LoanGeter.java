@@ -7,18 +7,14 @@ public class LoanGeter implements KycDepartment , CiviVerification {
         System.out.println("Done");
         KycDepartment.Information();
     }
-
     @Override
     public void CheackOutstandingLoan() {
         System.out.println("No Such as A Loans");
     }
-
     @Override
     public void AdharVerify() {
         System.out.println("Completr your Adhar Veryfication");
-
     }
-
     @Override
     public void PanVerify() {
         System.out.println("Complet Your Adhar Veryfication");
