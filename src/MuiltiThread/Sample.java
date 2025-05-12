@@ -40,18 +40,14 @@ public class Sample {
     public static void main(String[] args) {
         A a = new A();
         B b = new B(a); // Pass reference of A to B
-
         a.setName("AyushiPro");
-
         b.start(); // Daemon thread runs and sets limit
         try {
             b.join(); // Wait for daemon thread to finish before starting A
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-
-        a.start(); // Start main task thread
-
+        a.start(); // Start main task threa
         System.out.println("Main thread: " + Thread.currentThread().getName());
     }
 }
