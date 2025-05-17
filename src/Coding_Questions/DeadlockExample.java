@@ -1,6 +1,6 @@
 package Coding_Questions;
 
-public class gDeadlockExample {
+public class DeadlockExample {
     public static void main(String[] args) {
         final String resource1 = "Ayush";
         final String resource2 = "Verma";
