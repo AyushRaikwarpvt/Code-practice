@@ -1,19 +1,18 @@
 package Advance_Java;
 
-import kotlin.Result;
-
 import java.sql.*;
 
-public class Spark {
+public class Getting_Data {
     public static void main(String[] args) {
 
-        String url = "jdbc:mysql://localhost:3306";
+        String url = "jdbc:mysql://localhost:3306/Spark";
         String username = "root";
         String password = "Ayush@630";
-        String query = "Select * from Student";
+        String query = "Select * from Customers";
+
         try{
 //            1 Driver Load  Kro
-            Class.forName("com.mysql.cj.jdbc.Driver");
+//            Class.forName("com.mysql.cj.jdbc.Driver");
 //             2 Connection Bna Raha h
             Connection  con = DriverManager.getConnection(url , username , password);
 //              3 Create Statement
@@ -23,15 +22,13 @@ public class Spark {
             System.out.println(" ID | Name | Age | Course");
             System.out.println("-----------------------------");
             while (rs.next()){
-                System.out.println(rs.getInt("CustomerID " ) + " | " +
+                System.out.println(rs.getInt("CustomerID" ) + " | " +
                         rs.getString("Name") + " | " +
                         rs.getString("Email") + " | " +
                         rs.getInt("Age") + " | " +
                         rs.getString("City") + " | " );
             }
         } catch (SQLException e) {
-            throw new RuntimeException(e);
-        } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
     }
